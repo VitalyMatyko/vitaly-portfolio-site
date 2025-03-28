@@ -1,0 +1,23 @@
+:root {
+	--background_body: #1b1e24;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--background_body);
+}
+
+.app {
+	border: 1px solid white;
+
+	.top_panel {
+		border: 1px solid white;
+		width: 100%;
+		height: 100px;
+	}
+}
