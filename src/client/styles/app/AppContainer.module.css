@@ -1,1 +1,1 @@
-:root{--background_body: #1b1e24}*{margin:0;padding:0;box-sizing:border-box}body{background-color:var(--background_body)}.app{border:1px solid #fff}.app .top_panel{border:1px solid #fff;width:100%;height:100px}
+:root{--background_body: #202631}*{margin:0;padding:0;box-sizing:border-box}body{background-color:var(--background_body);max-width:1200px;margin:0 auto}.app{border:1px solid green;height:100vh;padding:10px}
