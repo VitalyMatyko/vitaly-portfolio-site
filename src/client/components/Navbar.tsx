@@ -7,7 +7,8 @@ const Navbar = () => {
 		<>
 			<div className={NavbarStyles.navbar_panel}>
 				<div className={NavbarStyles.top_panel}>
-					<div className={NavbarStyles.top_panel_text}>Portfolio</div>
+					{/* <div className={NavbarStyles.top_panel_text}>Portfolio</div> */}
+					<div className={NavbarStyles.top_panel_text}>Vitalii Matyko</div>
 					<div className={NavbarStyles.top_panel_pages}>
 						<Link className={NavbarStyles.active} to='/'>Home</Link>
 						<Link to='/about'>About</Link>
