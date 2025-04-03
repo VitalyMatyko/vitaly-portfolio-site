@@ -1,5 +1,5 @@
 :root {
-	--text-color: rgb(78, 179, 78);
+	--text-color: #4eb34e;
 }
 
 .navbar_panel {
@@ -22,18 +22,18 @@
 			width: 500px;
 			justify-content: space-around;
 
-			a {
+			& a {
 				color: #dfdfdf;
 				text-decoration: none;
 				transition: all 0.2s ease-in-out;
-
 				&:hover {
-					transform: scale(1.2);
+					color: var(--text-color);
 				}
 				&:active {
-					transform: scale(1);
+					transform: scale(0.7);
 				}
 			}
+
 			.active {
 				color: var(--text-color);
 				border-bottom: 2px solid var(--text-color);
