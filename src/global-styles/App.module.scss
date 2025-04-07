@@ -4,7 +4,15 @@
 	// --main-text-color: #39fc03;
 	// --background_body: #1b1e24;
 	// --background_body: #202631;
-	--background_body: linear-gradient(to bottom, #202631, #4a5568);
+	// --text-link-color: #4eb34e;
+	// --animation-border: 2px solid var(--main-text-color);
+	--main-text-color: green;
+	--text-color: #cdcdcd;
+	--text-link-color: green;
+	--border-color: green;
+	--profi-text-color: green;
+	--triangle-backgroundColor: #3b4454;
+	--body-background-color: linear-gradient(to bottom, #202631, #4a5568);
 }
 
 * {
@@ -15,7 +23,7 @@
 }
 
 body {
-	background: var(--background_body);
+	background: var(--body-background-color);
 	max-width: 1200px;
 	margin: 0 auto;
 }

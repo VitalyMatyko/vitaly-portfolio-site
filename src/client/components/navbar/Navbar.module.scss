@@ -1,12 +1,8 @@
-:root {
-	--text-color: #4eb34e;
-}
-
 .navbar_panel {
 	.top_panel {
 		width: 100%;
 		height: 100px;
-		color: #dfdfdf;
+		color: var(--text-color);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -23,11 +19,11 @@
 			justify-content: space-around;
 
 			& a {
-				color: #dfdfdf;
+				color: var(--text-color);
 				text-decoration: none;
 				transition: all 0.2s ease-in-out;
 				&:hover {
-					color: var(--text-color);
+					color: var(--text-link-color);
 				}
 				&:active {
 					transform: scale(0.7);
@@ -35,8 +31,8 @@
 			}
 
 			.active {
-				color: var(--text-color);
-				border-bottom: 2px solid var(--text-color);
+				color: var(--text-link-color);
+				border-bottom: 2px solid var(--border-color);
 				font-style: italic;
 			}
 		}
