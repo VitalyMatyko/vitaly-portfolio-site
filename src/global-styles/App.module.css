@@ -1,0 +1,1 @@
+@import"https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap";:root{--background_body: linear-gradient(to bottom, #202631, #4a5568)}*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}body{background:var(--background_body);max-width:1200px;margin:0 auto}.app{height:100vh;padding:10px;overflow:hidden}

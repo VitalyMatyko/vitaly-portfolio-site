@@ -1,17 +1,19 @@
-.navbar_panel {
-	border: 1px solid rgb(40, 100, 41);
-	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+:root {
+	--text-color: #4eb34e;
+}
 
+.navbar_panel {
 	.top_panel {
 		width: 100%;
 		height: 100px;
-		color: #fff;
+		color: #dfdfdf;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 
 		.top_panel_text {
 			font-size: 30px;
+			font-weight: 700;
 		}
 		.top_panel_pages {
 			font-size: 20px;
@@ -20,37 +22,35 @@
 			width: 500px;
 			justify-content: space-around;
 
-			a {
-				color: #fff;
+			& a {
+				color: #dfdfdf;
 				text-decoration: none;
 				transition: all 0.2s ease-in-out;
-
 				&:hover {
-					transform: scale(1.2);
+					color: var(--text-color);
 				}
 				&:active {
-					transform: scale(1);
+					transform: scale(0.7);
 				}
 			}
+
 			.active {
-				color: rgb(38, 138, 38);
-				border-bottom: 2px solid green;
+				color: var(--text-color);
+				border-bottom: 2px solid var(--text-color);
 				font-style: italic;
 			}
 		}
 	}
 }
 
-/* === Адаптивность === */
-
-// Планшеты (от 768px до 1024px)
+// Tabletes (от 768px до 1024px);
 @media (min-width: 768px) and (max-width: 1024px) {
 	.navbar_panel {
 		width: 100%;
 	}
 }
 
-// Телефоны (от 430px до 768px)
+// Phones (от 430px до 768px);
 @media (min-width: 320px) and (max-width: 620px) {
 	.navbar_panel {
 		width: 100%;

@@ -5,7 +5,7 @@ import Projects from './client/components/projects/Projects';
 import Skills from './client/components/skills/Skills';
 import Contacts from './client/components/contacts/Contacts';
 import Navbar from './client/components/navbar/Navbar'
-import AppStyles from './app-styles/App.module.scss'
+import AppStyles from './global-styles/App.module.scss'
 
 const App = () => {
 	return (
