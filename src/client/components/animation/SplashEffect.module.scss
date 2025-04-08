@@ -14,7 +14,7 @@
 		opacity: 1;
 	}
 	100% {
-		transform: translate(var(--x), var(--y)); /* Перемещение с учетом переменных */
+		transform: translate(var(--x), var(--y));
 		opacity: 0;
 	}
 }
@@ -22,7 +22,7 @@
 	position: absolute;
 	width: 8px;
 	height: 8px;
-	background: linear-gradient(to right, #00ff00, #008000);
+	background: var(--splash-color);
 	border-radius: 50%;
 	animation: splash-animation 0.6s linear forwards;
 	opacity: 1;

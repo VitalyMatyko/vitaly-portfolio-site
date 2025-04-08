@@ -8,20 +8,19 @@ import Navbar from './client/components/navbar/Navbar';
 import AppStyles from './global-styles/App.module.scss';
 import AnimationStyles from '../src/global-styles/Animation.module.scss';
 import { useState, useEffect } from 'react';
-// import { SocialId } from './global-types/types';
+import portfolio from '../src/portfolio/Portfolio 08.04.2025.pdf';
 
 const App = () => {
-	// const [showNavbar, setShowNavbar] = useState<boolean>(false);
-	// const [showOutside, setShowOutside] = useState<boolean>(false);
-	// const [showMiddle, setShowMiddle] = useState<boolean>(false);
-	// const [showText, setShowText] = useState<boolean>(false);
-
 	const [showAnimationData, setShowAnimationData] = useState({
 		showNavbar: false,
 		showOutside: false,
 		showMiddle: false,
 		showText: false
-	})
+	});
+	const [showWindowSendMessage, setShowWindowSendMessage] = useState(false);
+
+	const getShowWindowSendMessage = () => setShowWindowSendMessage(true);
+	const getHiddenWindowSendMessage = () => setShowWindowSendMessage(false);
 
 	const getShowAnimation = () => {
 		setTimeout(() => {
@@ -42,7 +41,7 @@ const App = () => {
 		getShowAnimation();
 	}, []);
 
-	const getFolowLink = (event: React.MouseEvent<HTMLDivElement>) => {
+	const getFolowLink = (event: React.MouseEvent<HTMLElement>) => {
 		const id = event.currentTarget.id;
 		if (!id) return;
 
@@ -50,12 +49,14 @@ const App = () => {
 			github: import.meta.env.VITE_GITHUB_LINK,
 			telegram: import.meta.env.VITE_TELEGRAM_LINK,
 			linkedin: import.meta.env.VITE_LINKEDIN_LINK,
+			cv: portfolio,
 		};
 
 		const link = links[id];
 		if (!link) return;
 		window.open(link || '/');
 	};
+
 	return (
 		<Router>
 			<div className={AppStyles.app}>
@@ -66,7 +67,12 @@ const App = () => {
 					<Navbar />
 				</div>
 				<Routes>
-					<Route path='/' element={<Home showAnimationData={showAnimationData} getFolowLink={getFolowLink} />} />
+					<Route path='/' element={<Home
+						showWindowSendMessage={showWindowSendMessage}
+						showAnimationData={showAnimationData}
+						getFolowLink={getFolowLink}
+						getShowWindowSendMessage={getShowWindowSendMessage}
+						getHiddenWindowSendMessage={getHiddenWindowSendMessage} />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/projects' element={<Projects />} />
 					<Route path='/skills' element={<Skills />} />

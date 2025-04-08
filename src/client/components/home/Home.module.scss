@@ -35,22 +35,30 @@
 				.textName {
 					font-size: 40px;
 					font-weight: 800;
-					padding-top: 90px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					margin: 0px 0px 20px 0px;
+					& span {
+						margin: 10px 0;
+					}
 				}
 
 				.textDeveloper {
 					color: var(--profi-text-color);
 					font-weight: bolder;
 					font-size: 20px;
+					text-align: center;
 				}
 				.button {
 					display: flex;
 					align-items: center;
-					justify-content: center;
-					margin: 30px 0;
+					justify-content: space-around;
+					margin: 30px 0px;
 					position: relative;
 
-					& button {
+					button {
 						width: 190px;
 						font-size: 15px;
 						padding: 5px 0;
@@ -62,6 +70,7 @@
 						transition: all 0.2s ease-in-out;
 						position: relative;
 						cursor: pointer;
+						margin: 10px;
 
 						&::before {
 							content: "";
@@ -70,17 +79,18 @@
 							left: 0;
 							width: 100%;
 							height: 0%;
-							background-color: var(--main-text-color);
+							background-color: var(--button-background-color);
 							transition: height 0.2s ease-in-out;
 							z-index: -1;
 						}
+
 						&:hover::before {
 							color: #ebebeb;
 							height: 100%;
 						}
 						&:active {
 							transform: scale(0.9);
-							background-color: var(--backgroundColor-triangle);
+							background-color: var(--triangle-backgroundColor);
 							&::before {
 								transition: height 0.1s ease-in-out;
 								height: 0%;
@@ -127,12 +137,12 @@
 						left: 0;
 						width: 0%;
 						height: 100%;
-						background-color: var(--main-text-color);
+						background-color: var(--button-background-color);
 						transition: width 0.2s ease-in-out;
 						z-index: -1;
 					}
 					&:hover::before {
-						fill: var(--main-text-color);
+						fill: var(--button-background-color);
 						width: 100%;
 					}
 					&:active {

@@ -1,20 +1,25 @@
 import React from 'react';
 
-export interface showAnimationDataProps {
+
+export interface ShowAnimationDataProps {
 	showAnimationData: {
 		showOutside: boolean;
 		showMiddle: boolean;
 		showText: boolean;
 		showNavbar: boolean;
 	}
-	getFolowLink: (event: React.MouseEvent<HTMLDivElement>) => void;
+	showWindowSendMessage: boolean;
+	getShowWindowSendMessage: () => void;
+	getFolowLink: (event: React.MouseEvent<HTMLElement>) => void;
+	getHiddenWindowSendMessage: () => void;
 }
 
-export interface linksType {
-	github: string;
-	telegram: string;
-	linkedin: string;
+export interface MainTextProps {
+	getFolowLink: (event: React.MouseEvent<HTMLElement>) => void;
+	getShowWindowSendMessage: () => void;
 }
 
+export interface SendMessageProps {
+	getHiddenWindowSendMessage: () => void;
+}
 
-// export type SocialId = 'github' | 'telegram' | 'linkedin';
