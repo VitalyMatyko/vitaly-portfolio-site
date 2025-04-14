@@ -11,6 +11,7 @@ const Home: React.FC<ShowAnimationDataProps> = ({
 	showWindowSendMessage,
 	showAnimationData,
 	getFolowLink,
+	handleDownload,
 	getShowWindowSendMessage,
 	getHiddenWindowSendMessage }) => {
 	return (
@@ -54,7 +55,10 @@ const Home: React.FC<ShowAnimationDataProps> = ({
 						<div className={homeStyles.text}>
 							{showWindowSendMessage
 								? (<SendMessage getHiddenWindowSendMessage={getHiddenWindowSendMessage} />)
-								: (<MainText getFolowLink={getFolowLink} getShowWindowSendMessage={getShowWindowSendMessage} />)}
+								: (<MainText
+									getFolowLink={getFolowLink}
+									handleDownload={handleDownload}
+									getShowWindowSendMessage={getShowWindowSendMessage} />)}
 						</div>
 					</div>
 

@@ -3,14 +3,17 @@ import sendMessageStyles from './SendMessage.module.scss';
 
 const SendMessage: React.FC<SendMessageProps> = ({ getHiddenWindowSendMessage }) => {
 	return (
-		<form className={sendMessageStyles.send_message}>
+		<form action="/vitaly-pro-hub/send" method="POST" className={sendMessageStyles.send_message}>
 			<div className={sendMessageStyles.text_message}>
 				<div className={sendMessageStyles.closeWindow} onClick={getHiddenWindowSendMessage}>&times;</div>
 				<div>
-					<input type="text" placeholder='Input your email' />
+					<input type="text" name='name' placeholder='Name...' />
 				</div>
 				<div>
-					<textarea name="" id="" placeholder='Input your message'></textarea>
+					<input type="text" name='email' placeholder='Email...' />
+				</div>
+				<div>
+					<textarea name="message" id="" placeholder='Message...'></textarea>
 				</div>
 			</div>
 			<button className={sendMessageStyles.button}>SEND</button>

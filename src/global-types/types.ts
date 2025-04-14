@@ -12,11 +12,13 @@ export interface ShowAnimationDataProps {
 	getShowWindowSendMessage: () => void;
 	getFolowLink: (event: React.MouseEvent<HTMLElement>) => void;
 	getHiddenWindowSendMessage: () => void;
+	handleDownload: () => void;
 }
 
 export interface MainTextProps {
 	getFolowLink: (event: React.MouseEvent<HTMLElement>) => void;
 	getShowWindowSendMessage: () => void;
+	handleDownload: () => void;
 }
 
 export interface SendMessageProps {

@@ -8,7 +8,8 @@ import Navbar from './client/components/navbar/Navbar';
 import AppStyles from './global-styles/App.module.scss';
 import AnimationStyles from '../src/global-styles/Animation.module.scss';
 import { useState, useEffect } from 'react';
-import portfolio from '../src/portfolio/Portfolio 08.04.2025.pdf';
+// import resume from '../public/resume.pdf';
+
 
 const App = () => {
 	const [showAnimationData, setShowAnimationData] = useState({
@@ -49,7 +50,6 @@ const App = () => {
 			github: import.meta.env.VITE_GITHUB_LINK,
 			telegram: import.meta.env.VITE_TELEGRAM_LINK,
 			linkedin: import.meta.env.VITE_LINKEDIN_LINK,
-			cv: portfolio,
 		};
 
 		const link = links[id];
@@ -57,8 +57,15 @@ const App = () => {
 		window.open(link || '/');
 	};
 
+	const handleDownload = () => {
+		const link = document.createElement('a');
+		link.href = `${import.meta.env.BASE_URL}resume.pdf`;
+		link.download = 'Vitalii_Resume.pdf';
+		link.click();
+	};
+
 	return (
-		<Router>
+		<Router basename='/vitaly-pro-hub'>
 			<div className={AppStyles.app}>
 				<div className={
 					showAnimationData.showNavbar
@@ -71,6 +78,7 @@ const App = () => {
 						showWindowSendMessage={showWindowSendMessage}
 						showAnimationData={showAnimationData}
 						getFolowLink={getFolowLink}
+						handleDownload={handleDownload}
 						getShowWindowSendMessage={getShowWindowSendMessage}
 						getHiddenWindowSendMessage={getHiddenWindowSendMessage} />} />
 					<Route path='/about' element={<About />} />

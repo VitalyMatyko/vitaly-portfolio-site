@@ -1,7 +1,7 @@
 import { MainTextProps } from '../../../../global-types/types';
 import homeStyles from '../Home.module.scss';
 
-const MainText: React.FC<MainTextProps> = ({ getFolowLink, getShowWindowSendMessage }) => {
+const MainText: React.FC<MainTextProps> = ({ getFolowLink, handleDownload, getShowWindowSendMessage }) => {
 	return (
 		<>
 			<div className={homeStyles.preview_text}>
@@ -10,7 +10,7 @@ const MainText: React.FC<MainTextProps> = ({ getFolowLink, getShowWindowSendMess
 
 				<div className={homeStyles.button}>
 					<button id='send_email' onClick={getShowWindowSendMessage}>Send me Email</button>
-					<button id='cv' onClick={getFolowLink}>Download cv</button>
+					<button id='cv' onClick={handleDownload}>Download cv</button>
 				</div>
 			</div>
 
