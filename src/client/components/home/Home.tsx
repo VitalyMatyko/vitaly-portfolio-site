@@ -3,16 +3,22 @@ import { ShowAnimationDataProps } from '../../../global-types/types';
 import MainText from './text/MainText';
 import SendMessage from './send-message/SendMessage';
 import AnimationStyles from '../../../global-styles/Animation.module.scss';
-
+import CorrectSentMessage from './sent-message/CorrectSentMessage';
+import UnCorrectSentMessage from './sent-message/UnCorrectSentMessage';
 
 
 
 const Home: React.FC<ShowAnimationDataProps> = ({
-	showWindowSendMessage,
+	messageData,
 	showAnimationData,
+	showWindowSendMessage,
+	showWindowSentMessage,
 	getFolowLink,
+	getMessageData,
+	getFormMessageData,
 	handleDownload,
 	getShowWindowSendMessage,
+	getShowWindowSentMessage,
 	getHiddenWindowSendMessage }) => {
 	return (
 		<>
@@ -53,12 +59,26 @@ const Home: React.FC<ShowAnimationDataProps> = ({
 						? AnimationStyles.visible_triangle_animation
 						: AnimationStyles.hidden_animation}>
 						<div className={homeStyles.text}>
-							{showWindowSendMessage
-								? (<SendMessage getHiddenWindowSendMessage={getHiddenWindowSendMessage} />)
-								: (<MainText
+							{showWindowSendMessage ? (
+								<SendMessage
+									messageData={messageData}
+									getMessageData={getMessageData}
+									getFormMessageData={getFormMessageData}
+									getHiddenWindowSendMessage={getHiddenWindowSendMessage}
+									getShowWindowSentMessage={getShowWindowSentMessage}
+								/>
+							) : showWindowSentMessage === true ? (
+								<CorrectSentMessage />
+							) : showWindowSentMessage === false ? (
+								<UnCorrectSentMessage />
+							) : (
+								<MainText
 									getFolowLink={getFolowLink}
 									handleDownload={handleDownload}
-									getShowWindowSendMessage={getShowWindowSendMessage} />)}
+									getShowWindowSendMessage={getShowWindowSendMessage}
+								/>
+							)}
+
 						</div>
 					</div>
 

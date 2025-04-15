@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"server": "node src/server/server.js",
+		"server": "node src/backend/server.js",
 		"dev-vite": "vite",
 		"dev": "concurrently \"vite\" \"nodemon src/backend/server.js\"",
 		"build": "tsc -b && vite build",

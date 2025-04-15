@@ -8,7 +8,6 @@ import Navbar from './client/components/navbar/Navbar';
 import AppStyles from './global-styles/App.module.scss';
 import AnimationStyles from '../src/global-styles/Animation.module.scss';
 import { useState, useEffect } from 'react';
-// import resume from '../public/resume.pdf';
 
 
 const App = () => {
@@ -19,9 +18,21 @@ const App = () => {
 		showText: false
 	});
 	const [showWindowSendMessage, setShowWindowSendMessage] = useState(false);
+	const [showWindowSentMessage, setShowWindowSentMessage] = useState<true | false | null>(null);
+
+	const [messageData, setMessageData] = useState({ name: '', email: '', message: '' });
 
 	const getShowWindowSendMessage = () => setShowWindowSendMessage(true);
 	const getHiddenWindowSendMessage = () => setShowWindowSendMessage(false);
+
+	const getShowWindowSentMessage = () => {
+		setShowWindowSendMessage(false);
+		setShowWindowSentMessage(true);
+		setTimeout(() => {
+			setShowWindowSentMessage(null);
+		}, 800);
+	};
+
 
 	const getShowAnimation = () => {
 		setTimeout(() => {
@@ -64,8 +75,21 @@ const App = () => {
 		link.click();
 	};
 
+	const getMessageData = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = event.target;
+		setMessageData((prev) => ({ ...prev, [name]: value }))
+	};
+
+	const getFormMessageData = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		console.log(`name: ${messageData.name}`);
+		console.log(`email: ${messageData.email}`);
+		console.log(`message: ${messageData.message}`);
+	};
+
+
 	return (
-		<Router basename='/vitaly-pro-hub'>
+		<Router basename='/vitaly-pro-hub' future={{ v7_relativeSplatPath: true }}>
 			<div className={AppStyles.app}>
 				<div className={
 					showAnimationData.showNavbar
@@ -75,11 +99,16 @@ const App = () => {
 				</div>
 				<Routes>
 					<Route path='/' element={<Home
+						messageData={messageData}
+						showWindowSentMessage={showWindowSentMessage}
 						showWindowSendMessage={showWindowSendMessage}
 						showAnimationData={showAnimationData}
 						getFolowLink={getFolowLink}
+						getMessageData={getMessageData}
+						getFormMessageData={getFormMessageData}
 						handleDownload={handleDownload}
 						getShowWindowSendMessage={getShowWindowSendMessage}
+						getShowWindowSentMessage={getShowWindowSentMessage}
 						getHiddenWindowSendMessage={getHiddenWindowSendMessage} />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/projects' element={<Projects />} />

@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 app.post('/vitaly-pro-hub/send', async (req, res) => {
 
 	const { name, email, message } = req.body;
-	console.log(req.body)
+	// console.log(req.body)
 
 	// Транспорт
 	let transporter = nodemailer.createTransport({
