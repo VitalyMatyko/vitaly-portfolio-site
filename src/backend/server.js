@@ -1,51 +1,42 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
-import { format } from 'path';
 import * as process from 'process';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
-
 const app = express();
 const PORT = 3000;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use('/vitaly-pro-hub', express.static('public'));
+app.use(express.json());
 
-app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
-	res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-	next();
-});
+app.use(cors({
+	origin: 'http://localhost:5173/vitaly-pro-hub',
+	methods: ['GET', 'POST'],
+	allowedHeaders: ['Content-Type'],
+}));
 
-app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/index.html');
-});
 app.post('/vitaly-pro-hub/send', async (req, res) => {
-
 	const { name, email, message } = req.body;
-	// console.log(req.body)
+	console.log(req.body);
 
-	// Транспорт
-	let transporter = nodemailer.createTransport({
-		service: 'gmail',
+	const transporter = nodemailer.createTransport({
+		service: "gmail",
 		auth: {
-			user: process.env.VITE_EMAIL_ADRESS,
-			pass: process.env.VITE_EMAIL_PASSWORD,
-		}
+			user: process.env.EMAIL_ADDRESS,
+			pass: process.env.EMAIL_PASSWORD,
+		},
 	});
 
-	// Письмо
 	let mailOptions = {
 		from: email,
-		to: process.env.VITE_EMAIL_ADRESS,
+		to: process.env.EMAIL_ADDRESS,
 		subject: `New message from ${name}`,
 		text: message,
 	};
 
-	//Отправка
 	try {
 		await transporter.sendMail(mailOptions);
 		res.status(200).json({ success: true, message: 'Message sent successfully.' });

@@ -16,7 +16,7 @@ export default defineConfig({
 	},
 	server: {
 		proxy: {
-			'/send': 'http://localhost:3000'
+			'/vitaly-pro-hub/send': 'http://localhost:3000'
 		}
 	},
 	plugins: [react()],

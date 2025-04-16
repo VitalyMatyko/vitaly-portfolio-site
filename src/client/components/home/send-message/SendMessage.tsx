@@ -9,7 +9,7 @@ const SendMessage: React.FC<SendMessageProps> = ({
 	getHiddenWindowSendMessage,
 }) => {
 	return (
-		<form onSubmit={getFormMessageData} action="/vitaly-pro-hub/send" method="POST" className={sendMessageStyles.send_message}>
+		<form onSubmit={(e) => { getFormMessageData(e); getShowWindowSentMessage() }} className={sendMessageStyles.send_message}>
 			<div className={sendMessageStyles.text_message}>
 				<div className={sendMessageStyles.closeWindow} onClick={getHiddenWindowSendMessage}>&times;</div>
 				<div>
@@ -22,7 +22,7 @@ const SendMessage: React.FC<SendMessageProps> = ({
 					<textarea name="message" id="" value={messageData.message} onChange={getMessageData} placeholder='Message...'></textarea>
 				</div>
 			</div>
-			<button onClick={getShowWindowSentMessage} type='submit' className={sendMessageStyles.button}>SEND</button>
+			<button type='submit' className={sendMessageStyles.button}>SEND</button>
 		</form>
 	)
 };

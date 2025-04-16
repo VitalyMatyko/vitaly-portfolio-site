@@ -20,19 +20,14 @@ const App = () => {
 	const [showWindowSendMessage, setShowWindowSendMessage] = useState(false);
 	const [showWindowSentMessage, setShowWindowSentMessage] = useState<true | false | null>(null);
 
-	const [messageData, setMessageData] = useState({ name: '', email: '', message: '' });
+	const [messageData, setMessageData] = useState({
+		name: '',
+		email: '',
+		message: ''
+	});
 
 	const getShowWindowSendMessage = () => setShowWindowSendMessage(true);
 	const getHiddenWindowSendMessage = () => setShowWindowSendMessage(false);
-
-	const getShowWindowSentMessage = () => {
-		setShowWindowSendMessage(false);
-		setShowWindowSentMessage(true);
-		setTimeout(() => {
-			setShowWindowSentMessage(null);
-		}, 800);
-	};
-
 
 	const getShowAnimation = () => {
 		setTimeout(() => {
@@ -77,16 +72,41 @@ const App = () => {
 
 	const getMessageData = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = event.target;
-		setMessageData((prev) => ({ ...prev, [name]: value }))
+		setMessageData((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const getFormMessageData = (event: React.FormEvent<HTMLFormElement>) => {
+	const getFormMessageData = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		console.log(`name: ${messageData.name}`);
-		console.log(`email: ${messageData.email}`);
-		console.log(`message: ${messageData.message}`);
+		try {
+			const response = await fetch('/vitaly-pro-hub/send', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(messageData),
+			});
+			if (response.ok) {
+				getShowWindowSentMessage();
+			} else {
+				const error = await response.json();
+				console.error(`Ошибка при отправке: ${error.message}`)
+			}
+		} catch (error) {
+			console.error(`Ошибка сети: ${error}`)
+		}
+		setMessageData((prev) => ({
+			...prev,
+			name: '',
+			email: '',
+			message: '',
+		}));
 	};
 
+	const getShowWindowSentMessage = () => {
+		setShowWindowSendMessage(false);
+		setShowWindowSentMessage(true);
+		setTimeout(() => {
+			setShowWindowSentMessage(null);
+		}, 1000);
+	};
 
 	return (
 		<Router basename='/vitaly-pro-hub' future={{ v7_relativeSplatPath: true }}>

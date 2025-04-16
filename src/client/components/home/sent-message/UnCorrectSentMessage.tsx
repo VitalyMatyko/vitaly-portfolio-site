@@ -11,11 +11,11 @@ const UnCorrectSentMessage = () => {
 					<path d="M32 16L16 32" stroke="#F44336" strokeWidth="4" strokeLinecap="round" />
 				</svg>
 			</div>
-			<div>
-				<span className={sentMessageStyles.sent_message_text}>Your message wasn't sent</span>
-				<span className={sentMessageStyles.sent_message_text}>Try another time</span>
+			<div className={sentMessageStyles.sent_message_text}>
+				<span >Your message wasn't sent.</span>
+				<span >Try another time.</span>
 			</div>
-		</div>
+		</div >
 	);
 };
 
