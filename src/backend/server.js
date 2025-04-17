@@ -24,8 +24,6 @@ app.post('/vitaly-pro-hub/send', async (req, res) => {
 		return res.status(400).json({ success: false, message: `Все поля обязательны.` });
 	};
 
-	console.log(req.body);
-
 	const transporter = nodemailer.createTransport({
 		service: "gmail",
 		auth: {
@@ -50,7 +48,7 @@ app.post('/vitaly-pro-hub/send', async (req, res) => {
 	}
 });
 
-//🌐
+//🌐 Port start.
 app.listen(PORT, () => {
 	console.log(`✅ SERVER STARTED ON PORT: ${PORT} ✅`);
 });

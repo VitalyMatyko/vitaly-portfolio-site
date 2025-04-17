@@ -76,7 +76,7 @@ const App = () => {
 	};
 
 	const URL = import.meta.env.NODE_ENV === 'production'
-		? import.meta.env.VITE_SERVER_URL
+		? import.meta.env.VITE_PROD_SERVER_URL
 		: import.meta.env.VITE_DEV_SERVER_URL;
 
 	const getFormMessageData = async (event: React.FormEvent<HTMLFormElement>) => {
