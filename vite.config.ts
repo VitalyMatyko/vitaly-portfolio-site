@@ -21,6 +21,8 @@ export default defineConfig({
 		}
 	},
 	preview: {
+		host: '0.0.0.0',
+		port: process.env.PORT ? Number(process.env.PORT) : 4173,
 		allowedHosts: ['vitaly-pro-hub-client.onrender.com', 'localhost']
 	},
 	plugins: [react()],
