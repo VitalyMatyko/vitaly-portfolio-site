@@ -75,29 +75,31 @@ const App = () => {
 		setMessageData((prev) => ({ ...prev, [name]: value }));
 	};
 
+	const URL = import.meta.env.NODE_ENV === 'production'
+		? import.meta.env.VITE_SERVER_URL
+		: import.meta.env.VITE_DEV_SERVER_URL;
+
 	const getFormMessageData = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
+
 		try {
-			const response = await fetch('/vitaly-pro-hub/send', {
+			const response = await fetch(`${URL}vitaly-pro-hub/send`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(messageData),
 			});
-			if (response.ok) {
-				getShowWindowSentMessage();
-			} else {
+
+			if (!response.ok) {
 				const error = await response.json();
-				console.error(`Ошибка при отправке: ${error.message}`)
+				throw new Error(error.message || `Ошибка при отправке сообщения.`);
 			}
+
+			getShowWindowSentMessage();
+			setMessageData({ name: '', email: '', message: '' });
+
 		} catch (error) {
 			console.error(`Ошибка сети: ${error}`)
 		}
-		setMessageData((prev) => ({
-			...prev,
-			name: '',
-			email: '',
-			message: '',
-		}));
 	};
 
 	const getShowWindowSentMessage = () => {

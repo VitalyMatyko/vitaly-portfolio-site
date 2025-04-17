@@ -6,20 +6,24 @@ import cors from 'cors';
 
 dotenv.config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use('/vitaly-pro-hub', express.static('public'));
 app.use(express.json());
 
 app.use(cors({
-	origin: 'http://localhost:5173/vitaly-pro-hub',
+	origin: ['http://localhost:5173', 'https://vitaly-pro-hub-client.onrender.com/'],
 	methods: ['GET', 'POST'],
 	allowedHeaders: ['Content-Type'],
 }));
 
 app.post('/vitaly-pro-hub/send', async (req, res) => {
 	const { name, email, message } = req.body;
+	if (!name || !email || !message) {
+		return res.status(400).json({ success: false, message: `Все поля обязательны.` });
+	};
+
 	console.log(req.body);
 
 	const transporter = nodemailer.createTransport({
@@ -46,6 +50,7 @@ app.post('/vitaly-pro-hub/send', async (req, res) => {
 	}
 });
 
+//🌐
 app.listen(PORT, () => {
 	console.log(`✅ SERVER STARTED ON PORT: ${PORT} ✅`);
 });
