@@ -4,13 +4,12 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"server": "node src/backend/server.js",
 		"dev-vite": "vite",
 		"dev": "concurrently \"vite\" \"nodemon src/backend/server.js\"",
-		"build": "tsc -b && vite build",
+		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "npm run build && vite preview",
-		"render": "vite preview --port $PORT --host 0.0.0.0",
+		"server": "node src/backend/server.js",
 		"github": "npm run build && gh-pages -d dist"
 	},
 	"dependencies": {

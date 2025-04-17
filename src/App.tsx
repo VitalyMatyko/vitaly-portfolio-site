@@ -75,15 +75,20 @@ const App = () => {
 		setMessageData((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const URL = import.meta.env.NODE_ENV === 'production'
+	const URL = location.host === 'vitaly-pro-hub-client.onrender.com'
 		? import.meta.env.VITE_PROD_SERVER_URL
-		: import.meta.env.VITE_DEV_SERVER_URL;
+		: import.meta.env.VITE_DEV_SERVER_URL
+
 
 	const getFormMessageData = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
+		console.log("MODE:", location.host);
+		console.log("VITE_PROD_SERVER_URL:", import.meta.env.VITE_PROD_SERVER_URL);
+		console.log("URL:", URL);
+
 		try {
-			const response = await fetch(`${URL}vitaly-pro-hub/send`, {
+			const response = await fetch(`${URL}/vitaly-pro-hub/send`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(messageData),

@@ -12,11 +12,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/vitaly-pro-hub', express.static('public'));
 app.use(express.json());
 
+const allowedOrigins = [
+	'http://localhost:5173',
+	'http://localhost:4173',
+	'https://vitaly-pro-hub-client.onrender.com',
+];
+
+
 app.use(cors({
-	origin: ['http://localhost:5173', 'https://vitaly-pro-hub-client.onrender.com/'],
+	origin: (origin, callback) => {
+		if (!origin || allowedOrigins.includes(origin)) {
+			callback(null, true);
+		} else {
+			callback(new Error(`Origin ${origin} not allowed by CORS`));
+		}
+	},
 	methods: ['GET', 'POST'],
 	allowedHeaders: ['Content-Type'],
 }));
+
 
 app.post('/vitaly-pro-hub/send', async (req, res) => {
 	const { name, email, message } = req.body;
