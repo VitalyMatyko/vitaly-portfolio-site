@@ -13,6 +13,11 @@ export interface ShowAnimationDataProps {
 		email: string,
 		message: string
 	};
+	validFormData: {
+		validName: boolean | null;
+		validEmail: boolean | null;
+		validMessage: boolean | null;
+	};
 	showWindowSendMessage: boolean;
 	showWindowSentMessage: boolean | null;
 	getMessageData: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -36,9 +41,25 @@ export interface SendMessageProps {
 		email: string,
 		message: string
 	};
+	validFormData: {
+		validName: boolean;
+		validEmail: boolean;
+		validMessage: boolean;
+	};
 	getMessageData: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 	getFormMessageData: (event: React.FormEvent<HTMLFormElement>) => void;
 	getHiddenWindowSendMessage: () => void;
 	getShowWindowSentMessage: () => void;
+};
+
+export interface TooltipProps {
+	validData: 'name' | 'email' | 'message';
 }
+
+
+export type ValidFormDataType = {
+	validName: boolean | null;
+	validEmail: boolean | null;
+	validMessage: boolean | null;
+};
 

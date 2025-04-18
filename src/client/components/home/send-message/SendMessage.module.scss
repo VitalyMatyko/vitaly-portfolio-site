@@ -7,6 +7,75 @@
 	border-radius: 20px;
 	position: relative;
 
+	.text_message {
+		width: 100%;
+		height: 100%;
+		transition: all 2s ease-in-out;
+
+		& input,
+		& textarea {
+			width: 80%;
+			height: auto;
+			margin: 27px auto;
+			height: auto;
+			background-color: transparent;
+			border: none;
+			border-bottom: 2px solid var(--border-color);
+			color: var(--text-color);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 17px;
+			padding: 0 5px 0 20px;
+
+			&:focus {
+				caret-color: var(--border-color);
+				outline: none;
+				&::placeholder {
+					color: transparent;
+					transition: color 0.7s ease;
+				}
+			}
+		}
+
+		& textarea {
+			border: 1px solid var(--border-color);
+			border-radius: 5px;
+			max-width: 80%;
+			min-width: 80%;
+			min-height: 118px;
+			max-height: 118px;
+			outline: none;
+		}
+
+		.tooltip_name {
+			position: absolute;
+			top: -84px;
+			left: -300px;
+			width: 100%;
+			height: 23%;
+			transition: all 2s ease-in-out;
+		}
+
+		.tooltip_email {
+			position: absolute;
+			top: -10px;
+			left: -300px;
+			width: 100%;
+			height: 23%;
+			transition: all 2s ease-in-out;
+		}
+
+		.tooltip_message {
+			position: absolute;
+			top: 64px;
+			left: -300px;
+			width: 100%;
+			height: 23%;
+			transition: all 2s ease-in-out;
+		}
+	}
+
 	.closeWindow {
 		position: absolute;
 		width: 30px;
@@ -18,6 +87,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		color: var(--form-text-color);
 		cursor: pointer;
 
 		&::before {
@@ -31,55 +101,29 @@
 			transition: height 0.2s ease-in-out;
 			z-index: -1;
 		}
-		&:hover::before {
+
+		&:hover {
 			color: var(--text-color);
+		}
+
+		&:hover::before {
 			height: 100%;
 		}
+
 		&:active {
 			transform: scale(0.9);
-			color: var(--text-color-active);
-		}
-	}
-
-	.text_message {
-		& input,
-		textarea {
-			width: 80%;
-			height: auto;
-			margin: 27px auto;
-			height: auto;
-			background-color: transparent;
-			border: none;
-			border-bottom: 2px solid var(--border-color);
-			color: var(--text-color);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 15px;
-			padding: 0 5px;
-
-			&:focus {
-				outline: none;
+			color: var(--border-color);
+			&::before {
+				height: 0%;
+				transition: all 0.2s ease-in-out;
 			}
-			&::placeholder {
-				padding-left: 20px;
-			}
-		}
-		& textarea {
-			border: 1px solid var(--border-color);
-			border-radius: 5px;
-			max-width: 80%;
-			min-width: 80%;
-			min-height: 118px;
-			max-height: 118px;
-			outline: none;
 		}
 	}
 
 	& .button {
 		border: 2px solid var(--border-color);
 		background-color: transparent;
-		color: var(--text-color);
+		color: var(--form-text-color);
 		padding: 10px 0px;
 		width: 80%;
 		margin: 7% auto;
@@ -102,13 +146,22 @@
 			background-color: var(--button-background-color);
 		}
 
-		&:hover::before {
+		&:hover {
 			color: var(--text-color);
+		}
+
+		&:hover::before {
 			height: 100%;
 		}
+
 		&:active {
 			transform: scale(0.9);
 			color: var(--text-color-active);
+
+			&::before {
+				transition: all 0.2s ease-in-out;
+				height: 0%;
+			}
 		}
 	}
 }

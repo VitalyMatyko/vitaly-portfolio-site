@@ -10,6 +10,7 @@ import UnCorrectSentMessage from './sent-message/UnCorrectSentMessage';
 
 const Home: React.FC<ShowAnimationDataProps> = ({
 	messageData,
+	validFormData,
 	showAnimationData,
 	showWindowSendMessage,
 	showWindowSentMessage,
@@ -62,6 +63,7 @@ const Home: React.FC<ShowAnimationDataProps> = ({
 							{showWindowSendMessage ? (
 								<SendMessage
 									messageData={messageData}
+									validFormData={validFormData}
 									getMessageData={getMessageData}
 									getFormMessageData={getFormMessageData}
 									getHiddenWindowSendMessage={getHiddenWindowSendMessage}

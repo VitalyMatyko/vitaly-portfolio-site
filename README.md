@@ -1,6 +1,6 @@
-## 🌎 VitalyPro Hub — this is a personal resume website,
+## 🌎 **VitalyPro Hub**
 
-    created to demonstrate professional skills and achievements in the field of programming.
+    This is a personal resume website,created to demonstrate professional skills and achievements in the field of programming.
     The project is an interactive platform where employers can get acquainted with experience, completed projects and contact information for cooperation.
 
 ## 🎯 Project goal:
