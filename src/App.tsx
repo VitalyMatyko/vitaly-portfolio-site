@@ -100,7 +100,12 @@ const App = () => {
 
 	const URL = location.host === 'vitaly-pro-hub-client.onrender.com'
 		? import.meta.env.VITE_PROD_SERVER_URL
-		: import.meta.env.VITE_DEV_SERVER_URL
+		: location.host === 'vitalymatyko.github.io'
+			? import.meta.env.VITE_PROD_SERVER_URL
+			: import.meta.env.VITE_DEV_SERVER_URL;
+
+	console.log(`URL: ${URL}`);
+	console.log(`location.host: ${location.host}`)
 
 	const getFormMessageData = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
