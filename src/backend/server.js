@@ -19,7 +19,6 @@ const allowedOrigins = [
 	'https://vitaly-pro-hub-client.onrender.com',
 ];
 
-
 app.use(cors({
 	origin: (origin, callback) => {
 		if (!origin || allowedOrigins.includes(origin)) {
@@ -31,7 +30,6 @@ app.use(cors({
 	methods: ['GET', 'POST'],
 	allowedHeaders: ['Content-Type'],
 }));
-
 
 app.post('/vitaly-pro-hub/send', async (req, res) => {
 	const { name, email, message } = req.body;

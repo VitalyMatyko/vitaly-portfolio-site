@@ -21,21 +21,19 @@ const App = () => {
 	});
 	const [showWindowSendMessage, setShowWindowSendMessage] = useState(false);
 	const [showWindowSentMessage, setShowWindowSentMessage] = useState<true | false | null>(null);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [isLoadingLine, setIsLoadingLine] = useState(false);
 
 	const [messageData, setMessageData] = useState({
 		name: '',
 		email: '',
 		message: ''
 	});
-
 	const [validFormData, setValidFormData] = useState<ValidFormDataType>({
 		validName: null,
 		validEmail: null,
 		validMessage: null,
 	});
-
-	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [isLoadingLine, setIsLoadingLine] = useState(false);
 
 	const getShowWindowSendMessage = () => setShowWindowSendMessage(true);
 	const getHiddenWindowSendMessage = () => {
@@ -107,13 +105,9 @@ const App = () => {
 	const getFormMessageData = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		// Проверка данных
 		const isName = /^[a-zA-Z0-9._-]{3,10}$/.test(messageData.name);
 		const isEmail = /[a-zA-Z0-9_.%-+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(messageData.email);
 		const isMessage = /^[^()[\]<>]{3,500}$/.test(messageData.message);
-
-		// if (!isName && !isEmail && !isMessage) return;
-
 		setValidFormData({
 			validName: !isName,
 			validEmail: !isEmail,
@@ -122,12 +116,10 @@ const App = () => {
 
 		if (isName && isEmail && isMessage) {
 			setIsSubmitting(true);
-
 			setShowWindowSentMessage(true);
 			setTimeout(() => {
 				setShowWindowSentMessage(null);
 			}, 1000);
-
 			setShowWindowSendMessage(false);
 			setMessageData({ name: '', email: '', message: '' });
 			setValidFormData({ validName: false, validEmail: false, validMessage: false });
@@ -156,7 +148,6 @@ const App = () => {
 			}, 1000);
 		}
 	};
-
 
 	return (
 		<Router basename='/vitaly-pro-hub' future={{ v7_relativeSplatPath: true }}>
