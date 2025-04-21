@@ -4,46 +4,42 @@ import Tooltip from './tooltip/Tooltip';
 
 const SendMessage: React.FC<SendMessageProps> = ({
 	messageData,
+	isSubmitting,
 	validFormData,
 	getMessageData,
 	getFormMessageData,
-	getShowWindowSentMessage,
 	getHiddenWindowSendMessage,
 }) => {
 	return (
-		<form onSubmit={(e) => { getFormMessageData(e); getShowWindowSentMessage() }} className={sendMessageStyles.send_message}>
+		<form onSubmit={(e) => { getFormMessageData(e) }} className={sendMessageStyles.send_message}>
 			<div className={sendMessageStyles.text_message}>
 				<div className={sendMessageStyles.closeWindow} onClick={getHiddenWindowSendMessage}>&times;</div>
 
 				<div>
 					<div className={sendMessageStyles.tooltip_name}>
-						{!validFormData.validName && <Tooltip validData='name' />}
+						{validFormData.validName && <Tooltip validData='name' />}
 					</div>
-					<input autoComplete='off' type="text" name='name' value={messageData.name} onChange={getMessageData} placeholder='Name...' />
+					<input className={validFormData.validName ? sendMessageStyles.uncorrectInput : ''} autoComplete='off' type="text" name='name' value={messageData.name} onChange={getMessageData} placeholder='Name...' />
 				</div>
 
 				<div>
 					<div className={sendMessageStyles.tooltip_email}>
-						{!validFormData.validEmail && <Tooltip validData='email' />}
+						{validFormData.validEmail && <Tooltip validData='email' />}
 					</div>
-					<input autoComplete='off' type="text" name='email' value={messageData.email} onChange={getMessageData} placeholder='Email...' />
+					<input className={validFormData.validEmail ? sendMessageStyles.uncorrectInput : ''} autoComplete='off' type="text" name='email' value={messageData.email} onChange={getMessageData} placeholder='Email...' />
 				</div>
 
 				<div>
 					<div className={sendMessageStyles.tooltip_message}>
-						{!validFormData.validMessage && <Tooltip validData='message' />}
+						{validFormData.validMessage && <Tooltip validData='message' />}
 					</div>
-					<textarea name="message" id="" value={messageData.message} onChange={getMessageData} placeholder='Message...'></textarea>
+					<textarea className={validFormData.validMessage ? sendMessageStyles.uncorrectTextarea : ''} name="message" id="" value={messageData.message} onChange={getMessageData} placeholder='Message...'></textarea>
 				</div>
 
 			</div>
-			<button type='submit' className={sendMessageStyles.button}>SEND</button>
+			<button type='submit' disabled={isSubmitting} className={sendMessageStyles.button}>{isSubmitting ? 'SEND...' : 'SEND'}</button>
 		</form>
 	)
 };
 
 export default SendMessage;
-
-{/* <div className={sendMessageStyles.tooltip}>
-					{!validFormData.validName && <Tooltip />}
-				</div> */}

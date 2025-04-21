@@ -1,7 +1,7 @@
 import { MainTextProps } from '../../../../global-types/types';
 import homeStyles from '../Home.module.scss';
 
-const MainText: React.FC<MainTextProps> = ({ getFolowLink, handleDownload, getShowWindowSendMessage }) => {
+const MainText: React.FC<MainTextProps> = ({ getFollowLink, handleDownload, getShowWindowSendMessage }) => {
 	return (
 		<>
 			<div className={homeStyles.preview_text}>
@@ -15,7 +15,7 @@ const MainText: React.FC<MainTextProps> = ({ getFolowLink, handleDownload, getSh
 			</div>
 
 			<div className={homeStyles.socialMedia} >
-				<div className={homeStyles.gitHubLogo} id='github' onClick={getFolowLink}>
+				<div className={homeStyles.gitHubLogo} id='github' onClick={getFollowLink}>
 					<svg viewBox="0 0 1024 1024" width="200" height="200" xmlns="http://www.w3.org/2000/svg" fill='white'>
 						<path d="M512 0C229.23 0 0 229.23 0 512c0 226.09 146.51 417.55 349.63 485.56 25.56 4.71 34.95-11.11 34.95-24.71
 								 0-12.27-.48-52.87-.73-95.91-142.23 30.91-172.21-61.43-172.21-61.43-23.25-59.06-56.71-74.76-56.71-74.76-46.41-31.71
@@ -27,7 +27,7 @@ const MainText: React.FC<MainTextProps> = ({ getFolowLink, handleDownload, getSh
 								 229.23 794.77 0 512 0z" />
 					</svg>
 				</div>
-				<div className={homeStyles.telegramLogo} id='telegram' onClick={getFolowLink}>
+				<div className={homeStyles.telegramLogo} id='telegram' onClick={getFollowLink}>
 					<svg viewBox="0 0 256 256" width="200" height="200" xmlns="http://www.w3.org/2000/svg" fill='white'>
 						<path d="M128 0C57.31 0 0 57.31 0 128s57.31 128 128 128 128-57.31 128-128S198.69 0 128 0zm60.38 85.64c-1.5 
 								15.92-8 55.1-11.3 72.93-1.4 7.6-4.14 10.15-6.8 10.4-5.78.55-9.87-3.81-15.3-7.48-8.53-5.78-13.4-9.36-21.49-15.02-9.52-6.64-3.36-10.28
@@ -37,7 +37,7 @@ const MainText: React.FC<MainTextProps> = ({ getFolowLink, handleDownload, getSh
 								4.93z" />
 					</svg>
 				</div>
-				<div className={homeStyles.linkedinLogo} id='linkedin' onClick={getFolowLink}>
+				<div className={homeStyles.linkedinLogo} id='linkedin' onClick={getFollowLink}>
 					<svg viewBox="0 0 448 512" width="200" height="200" xmlns="http://www.w3.org/2000/svg" fill='white'>
 						<path d="M100.28 448H7.4V148.9h92.88zm-46.44-340a53.34 53.34 0 1 1 53.34-53.34 53.34 53.34 0 0 1-53.34 53.34zm384
 								 340h-92.68V302.4c0-34.7-.7-79.3-48.34-79.3-48.4 0-55.84 37.8-55.84 76.8V448h-92.66V148.9h88.94v40.8h1.3c12.4-23.5

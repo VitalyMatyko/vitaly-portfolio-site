@@ -11,8 +11,7 @@ const CorrectSentMessage = () => {
 						stroke="#4CAF50"
 						strokeWidth="4"
 						strokeLinecap="round"
-						strokeLinejoin="round"
-					/>
+						strokeLinejoin="round" />
 				</svg>
 			</div>
 			<div>

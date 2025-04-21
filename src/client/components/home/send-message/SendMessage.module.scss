@@ -38,6 +38,24 @@
 			}
 		}
 
+		.uncorrectInput {
+			border-bottom: 1px solid var(--uncorrect-border-color);
+			animation: uncorrect-border 2s ease forwards;
+		}
+		.uncorrectTextarea {
+			border: 1px solid var(--uncorrect-border-color);
+			animation: uncorrect-border 2s ease forwards;
+		}
+
+		@keyframes uncorrect-border {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
 		& textarea {
 			border: 1px solid var(--border-color);
 			border-radius: 5px;

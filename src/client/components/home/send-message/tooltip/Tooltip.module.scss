@@ -8,10 +8,11 @@
 	border: 1px solid var(--tooltip-border-color);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	animation: fadeInUp 2s ease forwards;
+	z-index: 1;
 
 	.triangle {
 		position: absolute;
-		top: 63px;
+		top: 61.5px;
 		left: 96%;
 		border-top: 15px solid transparent;
 		border-bottom: 10px solid transparent;
@@ -21,7 +22,7 @@
 		&::before {
 			content: "";
 			position: absolute;
-			top: -15px;
+			top: -15.2px;
 			left: -38px;
 			border-top: 15px solid transparent;
 			border-bottom: 10px solid transparent;

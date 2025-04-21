@@ -1,16 +1,16 @@
 
 import { Link } from 'react-router-dom';
-import NavbarStyles from './Navbar.module.scss'
-import SplashEffect from '../animation/SplashEffect';
+import navbarStyles from './Navbar.module.scss'
+import SplashEffect from '../animation/splash-effect/SplashEffect';
 
 const Navbar = () => {
 	return (
-		<div className={NavbarStyles.navbar_panel}>
-			<div className={NavbarStyles.top_panel}>
-				<div className={NavbarStyles.top_panel_text}>Vitaly Matyko</div>
-				<div className={NavbarStyles.top_panel_pages}>
+		<div className={navbarStyles.navbar_panel}>
+			<div className={navbarStyles.top_panel}>
+				<div className={navbarStyles.top_panel_text}>Vitaly Matyko</div>
+				<div className={navbarStyles.top_panel_pages}>
 					<SplashEffect>
-						<Link className={NavbarStyles.active} to='/'>Home</Link>
+						<Link className={navbarStyles.active} to='/'>Home</Link>
 					</SplashEffect>
 					<SplashEffect>
 						<Link to='/about'>About</Link>

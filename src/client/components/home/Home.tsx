@@ -4,22 +4,21 @@ import MainText from './text/MainText';
 import SendMessage from './send-message/SendMessage';
 import AnimationStyles from '../../../global-styles/Animation.module.scss';
 import CorrectSentMessage from './sent-message/CorrectSentMessage';
-import UnCorrectSentMessage from './sent-message/UnCorrectSentMessage';
 
 
 
 const Home: React.FC<ShowAnimationDataProps> = ({
 	messageData,
 	validFormData,
+	isSubmitting,
 	showAnimationData,
 	showWindowSendMessage,
 	showWindowSentMessage,
-	getFolowLink,
+	getFollowLink,
 	getMessageData,
-	getFormMessageData,
 	handleDownload,
+	getFormMessageData,
 	getShowWindowSendMessage,
-	getShowWindowSentMessage,
 	getHiddenWindowSendMessage }) => {
 	return (
 		<>
@@ -63,19 +62,16 @@ const Home: React.FC<ShowAnimationDataProps> = ({
 							{showWindowSendMessage ? (
 								<SendMessage
 									messageData={messageData}
+									isSubmitting={isSubmitting}
 									validFormData={validFormData}
 									getMessageData={getMessageData}
 									getFormMessageData={getFormMessageData}
-									getHiddenWindowSendMessage={getHiddenWindowSendMessage}
-									getShowWindowSentMessage={getShowWindowSentMessage}
-								/>
+									getHiddenWindowSendMessage={getHiddenWindowSendMessage} />
 							) : showWindowSentMessage === true ? (
 								<CorrectSentMessage />
-							) : showWindowSentMessage === false ? (
-								<UnCorrectSentMessage />
 							) : (
 								<MainText
-									getFolowLink={getFolowLink}
+									getFollowLink={getFollowLink}
 									handleDownload={handleDownload}
 									getShowWindowSendMessage={getShowWindowSendMessage}
 								/>

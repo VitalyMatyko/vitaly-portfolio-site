@@ -6,6 +6,9 @@
 	margin: 10px;
 	z-index: 4;
 	cursor: pointer;
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 @keyframes splash-animation {

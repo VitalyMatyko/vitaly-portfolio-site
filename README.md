@@ -23,6 +23,14 @@
     🛠️ Databases: MongoDB, PostgreSQL, MySQL.
     🛠️ Version control: GIT, GitHub.
 
+## 📷 Screenshots
+
+🔹 [home page](https://github.com/VitalyMatyko/vitaly-pro-hub/blob/main/public/screenshots/home-page.png)<br>
+🔹 [send message window](https://github.com/VitalyMatyko/vitaly-pro-hub/blob/main/public/screenshots/send-message-window.png)<br>
+🔹 [check input data message](https://github.com/VitalyMatyko/vitaly-pro-hub/blob/main/public/screenshots/check%20input%20data%20message.png)<br>
+🔹 [sent message successfully](https://github.com/VitalyMatyko/vitaly-pro-hub/blob/main/public/screenshots/sent%20message%20succssfully.png)<br>
+🔹 [download resume file](https://github.com/VitalyMatyko/vitaly-pro-hub/blob/main/public/screenshots/download%20resume%20file.png)<br>
+
 ## 📈 Development plans:
 
     📌 Add a blog to describe the technologies studied (react, JAVASCRIPT, API, rest api, typescript).
