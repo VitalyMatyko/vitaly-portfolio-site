@@ -88,7 +88,7 @@ const App = () => {
 
 	const handleDownload = () => {
 		const link = document.createElement('a');
-		link.href = `${import.meta.env.BASE_URL}resume.pdf`;
+		link.href = `${import.meta.env.BASE_URL}/resume.pdf`;
 		link.download = 'Vitalii_Resume.pdf';
 		link.click();
 	};
