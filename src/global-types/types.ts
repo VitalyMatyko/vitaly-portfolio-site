@@ -60,6 +60,12 @@ export interface TooltipProps {
 	validData: 'name' | 'email' | 'message';
 };
 
+// This NavbarProps interface describes the props for the Navbar component.
+export interface NavbarProps {
+	selectPage: string;
+	getSelectPage: (event: React.MouseEvent<HTMLElement>) => void;
+};
+
 // This ValidFormDataType is used to describe the validation state of form data.
 export type ValidFormDataType = {
 	validName: boolean | null;

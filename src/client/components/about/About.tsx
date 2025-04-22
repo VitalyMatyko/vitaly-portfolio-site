@@ -1,10 +1,10 @@
-
+import aboutStyles from './About.module.scss';
 
 const About = () => {
 	return (
-		<>
-			<h1 style={{ color: 'white' }}>About Page</h1>
-		</>
+		<div>
+			<h1 className={aboutStyles.about_page_container}>About Page</h1>
+		</div>
 	)
 };
 

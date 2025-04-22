@@ -2,27 +2,28 @@
 import { Link } from 'react-router-dom';
 import navbarStyles from './Navbar.module.scss'
 import SplashEffect from '../animation/splash-effect/SplashEffect';
+import { NavbarProps } from '../../../global-types/types';
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ selectPage, getSelectPage }) => {
 	return (
 		<div className={navbarStyles.navbar_panel}>
 			<div className={navbarStyles.top_panel}>
 				<div className={navbarStyles.top_panel_text}>Vitaly Matyko</div>
-				<div className={navbarStyles.top_panel_pages}>
+				<div onClick={getSelectPage} className={navbarStyles.top_panel_pages}>
 					<SplashEffect>
-						<Link className={navbarStyles.active} to='/'>Home</Link>
+						<Link className={selectPage === 'home' ? navbarStyles.active : ''} id='home' to='/home'>Home</Link>
 					</SplashEffect>
 					<SplashEffect>
-						<Link to='/about'>About</Link>
+						<Link className={selectPage === 'about' ? navbarStyles.active : ''} id='about' to='/about'>About</Link>
 					</SplashEffect>
 					<SplashEffect>
-						<Link to='/projects'>Projects</Link>
+						<Link className={selectPage === 'projects' ? navbarStyles.active : ''} id='projects' to='/projects'>Projects</Link>
 					</SplashEffect>
 					<SplashEffect>
-						<Link to='/skills'>Skills</Link>
+						<Link className={selectPage === 'skills' ? navbarStyles.active : ''} id='skills' to='/skills'>Skills</Link>
 					</SplashEffect>
 					<SplashEffect>
-						<Link to='/contacts'>Contact</Link>
+						<Link className={selectPage === 'contacts' ? navbarStyles.active : ''} id='contacts' to='/contacts'>Contacts</Link>
 					</SplashEffect>
 				</div>
 			</div>
