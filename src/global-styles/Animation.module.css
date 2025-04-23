@@ -1,1 +1,0 @@
-.visible_animation{opacity:1;transition:opacity 1s ease-in-out;pointer-events:auto}.hidden_animation{opacity:0;pointer-events:none}.visible_triangle_animation{opacity:1;transition:opacity 1s ease-in-out;pointer-events:auto;display:flex;align-items:center;justify-content:center;z-index:2}.hidden_triangle_animation{opacity:0;pointer-events:none}
