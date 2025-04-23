@@ -5,7 +5,7 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
 	root: './',
-	base: "/vitaly-pro-hub",
+	base: "/vitaly-pro-hub/",
 	build: {
 		outDir: './dist',
 		rollupOptions: {

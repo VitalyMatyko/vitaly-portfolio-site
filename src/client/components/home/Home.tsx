@@ -59,24 +59,20 @@ const Home: React.FC<ShowAnimationDataProps> = ({
 						? AnimationStyles.visible_triangle_animation
 						: AnimationStyles.hidden_animation}>
 						<div className={homeStyles.text}>
-							{showWindowSendMessage ? (
-								<SendMessage
+							{showWindowSendMessage
+								? (<SendMessage
 									messageData={messageData}
 									isSubmitting={isSubmitting}
 									validFormData={validFormData}
 									getMessageData={getMessageData}
 									getFormMessageData={getFormMessageData}
-									getHiddenWindowSendMessage={getHiddenWindowSendMessage} />
-							) : showWindowSentMessage === true ? (
-								<CorrectSentMessage />
-							) : (
-								<MainText
-									getFollowLink={getFollowLink}
-									handleDownload={handleDownload}
-									getShowWindowSendMessage={getShowWindowSendMessage}
-								/>
-							)}
-
+									getHiddenWindowSendMessage={getHiddenWindowSendMessage} />)
+								: showWindowSentMessage === true
+									? (<CorrectSentMessage />)
+									: (<MainText
+										getFollowLink={getFollowLink}
+										handleDownload={handleDownload}
+										getShowWindowSendMessage={getShowWindowSendMessage} />)}
 						</div>
 					</div>
 

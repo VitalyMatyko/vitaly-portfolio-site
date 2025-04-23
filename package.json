@@ -3,10 +3,11 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+	"homepage": "https://vitalymatyko.github.io/vitaly-pro-hub",
 	"scripts": {
 		"dev-vite": "vite",
 		"dev": "concurrently \"vite\" \"nodemon src/backend/server.js\"",
-		"build": "vite build",
+		"build": "vite build && cp dist/index.html dist/404.html",
 		"lint": "eslint .",
 		"preview": "npm run build && vite preview",
 		"server": "node src/backend/server.js",

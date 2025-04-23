@@ -1,15 +1,15 @@
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import Home from './client/components/home/Home';
 import About from './client/components/about/About';
 import Projects from './client/components/projects/Projects';
 import Skills from './client/components/skills/Skills';
 import Contacts from './client/components/contacts/Contacts';
 import Navbar from './client/components/navbar/Navbar';
+import LoadingLine from './client/components/loading-line/LoadingLine';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AppStyles from './global-styles/App.module.scss';
 import AnimationStyles from '../src/global-styles/Animation.module.scss';
-import { useState, useEffect } from 'react';
 import { ValidFormDataType } from './global-types/types';
-import LoadingLine from './client/components/loading-line/LoadingLine';
 
 
 const App = () => {
@@ -35,9 +35,6 @@ const App = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isLoadingLine, setIsLoadingLine] = useState(false);
 	const [selectPage, setSelectPage] = useState('home');
-	const navigate = useNavigate();
-	const locations = useLocation();
-
 
 
 	const getSelectPage = (event: React.MouseEvent<HTMLElement>) => {
@@ -79,12 +76,9 @@ const App = () => {
 
 	useEffect(() => {
 		getShowAnimation();
-
-		const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-		const isReload = navEntry?.type === 'reload';
-		if (isReload && locations.pathname !== '/home') {
-			navigate('/home', { replace: true });
-		}
+		if (window.location.pathname !== '/vitaly-pro-hub/home') {
+			window.location.href = '/vitaly-pro-hub/home';
+		};
 	}, []);
 
 	const getFollowLink = (event: React.MouseEvent<HTMLElement>) => {
@@ -168,36 +162,38 @@ const App = () => {
 	};
 
 	return (
-		<div className={AppStyles.app}>
-			{isLoadingLine && <LoadingLine />}
-			<div className={
-				showAnimationData.showNavbar
-					? AnimationStyles.visible_animation
-					: AnimationStyles.hidden_animation}>
-				<Navbar selectPage={selectPage} getSelectPage={getSelectPage} />
+		<Router basename='/vitaly-pro-hub/' future={{ v7_relativeSplatPath: true }}>
+			<div className={AppStyles.app}>
+				{isLoadingLine && <LoadingLine />}
+				<div className={
+					showAnimationData.showNavbar
+						? AnimationStyles.visible_animation
+						: AnimationStyles.hidden_animation}>
+					<Navbar selectPage={selectPage} getSelectPage={getSelectPage} />
+				</div>
+				<Routes>
+					<Route path="/" element={<Navigate to="/home" />} />
+					<Route path='/home' element={<Home
+						messageData={messageData}
+						isSubmitting={isSubmitting}
+						validFormData={validFormData}
+						showWindowSentMessage={showWindowSentMessage}
+						showWindowSendMessage={showWindowSendMessage}
+						showAnimationData={showAnimationData}
+						getFollowLink={getFollowLink}
+						getMessageData={getMessageData}
+						handleDownload={handleDownload}
+						getFormMessageData={getFormMessageData}
+						getShowWindowSendMessage={getShowWindowSendMessage}
+						getHiddenWindowSendMessage={getHiddenWindowSendMessage} />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/projects' element={<Projects />} />
+					<Route path='/skills' element={<Skills />} />
+					<Route path='/contacts' element={<Contacts />} />
+					<Route path="*" element={<Navigate to="/home" />} />
+				</Routes>
 			</div>
-			<Routes>
-				<Route path="/" element={<Navigate to="/home" replace />} />
-				<Route path='/home' element={<Home
-					messageData={messageData}
-					isSubmitting={isSubmitting}
-					validFormData={validFormData}
-					showWindowSentMessage={showWindowSentMessage}
-					showWindowSendMessage={showWindowSendMessage}
-					showAnimationData={showAnimationData}
-					getFollowLink={getFollowLink}
-					getMessageData={getMessageData}
-					handleDownload={handleDownload}
-					getFormMessageData={getFormMessageData}
-					getShowWindowSendMessage={getShowWindowSendMessage}
-					getHiddenWindowSendMessage={getHiddenWindowSendMessage} />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/projects' element={<Projects />} />
-				<Route path='/skills' element={<Skills />} />
-				<Route path='/contacts' element={<Contacts />} />
-				<Route path='*' element={<Navigate to='/home' replace />} />
-			</Routes>
-		</div>
+		</Router>
 	)
 };
 export default App
