@@ -1,0 +1,62 @@
+.navbar_panel {
+	.top_panel {
+		width: 100%;
+		height: 100px;
+		color: var(--text-color);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.top_panel_text {
+			font-size: 30px;
+			font-weight: 700;
+		}
+		.top_panel_pages {
+			font-size: 20px;
+			display: flex;
+			align-items: center;
+			width: 500px;
+			justify-content: space-between;
+
+			& a {
+				color: var(--text-color);
+				text-decoration: none;
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					color: var(--text-link-color);
+				}
+				&:active {
+					transform: scale(0.7);
+				}
+			}
+			.active {
+				color: var(--text-link-color);
+				border-bottom: 2px solid var(--border-color);
+				font-style: italic;
+			}
+		}
+	}
+}
+
+// Tabletes (от 768px до 1024px);
+@media (min-width: 768px) and (max-width: 1024px) {
+	.navbar_panel {
+		width: 100%;
+	}
+}
+
+// Phones (от 430px до 768px);
+@media (min-width: 320px) and (max-width: 620px) {
+	.navbar_panel {
+		width: 100%;
+		.top_panel {
+			.top_panel_text {
+				display: none;
+			}
+			.top_panel_pages {
+				width: 100%;
+				font-size: 17px;
+			}
+		}
+	}
+}
