@@ -61,17 +61,17 @@ const App = () => {
 		setIsLoadingLine(true);
 		setTimeout(() => {
 			setShowAnimationData((prev) => ({ ...prev, showNavbar: true }));
-		}, 1000);
+		}, 500);
 		setTimeout(() => {
 			setShowAnimationData((prev) => ({ ...prev, showOutside: true }));
-		}, 2000);
+		}, 1000);
 		setTimeout(() => {
 			setShowAnimationData((prev) => ({ ...prev, showMiddle: true }));
-		}, 3000);
+		}, 1500);
 		setTimeout(() => {
 			setShowAnimationData((prev) => ({ ...prev, showText: true }));
 			setIsLoadingLine(false);
-		}, 4000);
+		}, 2500);
 	};
 
 	useEffect(() => {
@@ -90,7 +90,6 @@ const App = () => {
 			telegram: import.meta.env.VITE_TELEGRAM_LINK,
 			linkedin: import.meta.env.VITE_LINKEDIN_LINK,
 		};
-
 		const link = links[id];
 		if (!link) return;
 		window.open(link || '/');
@@ -129,6 +128,7 @@ const App = () => {
 		if (isName && isEmail && isMessage) {
 			setIsSubmitting(true);
 			setShowWindowSentMessage(true);
+
 			setTimeout(() => {
 				setShowWindowSentMessage(null);
 			}, 1000);

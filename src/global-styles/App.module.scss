@@ -2,18 +2,26 @@
 
 :root {
 	--text-color: #cdcdcd;
+	--body-background-color: linear-gradient(to bottom, #202631, #4a5568);
 	--text-link-color: green;
 	--border-color: green;
 	--profi-text-color: green;
 	--button-background-color: green;
 	--text-color-active: green;
-	--splash-color: linear-gradient(to right, #00ff00, #008000);
 	--triangle-backgroundColor: #3b4454;
-	--body-background-color: linear-gradient(to bottom, #202631, #4a5568);
 	--form-text-color: #939393;
 	--tooltip-border-color: #939393;
 	--uncorrect-border-color: red;
 	--loading-line-color: green;
+
+	--about-header-container-background-color: linear-gradient(to right, #00ff007d, #0080007d);
+	--about-text-container-background-color: linear-gradient(to right, #06dd0640, #00800040);
+	--about-text-container-background-color: linear-gradient(to bottom, #202631, #404d63);
+	--about-text-color: green;
+	--about-text-header-border-color: #cdcdcd;
+
+	--box-shadow-about-page-color: 0px 0px 70px 0px #82e98236;
+	--box-shadow-animation-color: 0px 0px 70px 0px #82e98236;
 }
 
 * {

@@ -5,6 +5,7 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	animation: fadeIn 2s ease-in-out;
 
 	.main_animation {
 		width: 600px;
@@ -30,6 +31,7 @@
 			top: -25px;
 			left: 53px;
 			z-index: 3;
+			box-shadow: var(--box-shadow-animation-color);
 
 			.preview_text {
 				.textName {
@@ -167,6 +169,7 @@
 			justify-content: center;
 			z-index: 2;
 			transform: rotate(65deg);
+			box-shadow: var(--box-shadow-animation-color);
 
 			.middle_triangle_top {
 				position: absolute;
@@ -175,6 +178,7 @@
 				border-left: 47px solid transparent;
 				border-right: 47px solid transparent;
 				border-bottom: 300px solid var(--border-color);
+
 				&::after {
 					content: "";
 					position: absolute;
@@ -326,6 +330,7 @@
 			height: 560px;
 			position: absolute;
 			z-index: 1;
+			box-shadow: var(--box-shadow-animation-color);
 
 			.outside_triangle_top {
 				position: absolute;
@@ -475,6 +480,15 @@
 				}
 			}
 		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
 

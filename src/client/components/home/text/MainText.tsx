@@ -8,6 +8,7 @@ const MainText: React.FC<MainTextProps> = ({ getFollowLink, handleDownload, getS
 				<div className={homeStyles.textName}><span>Hey There,</span><span>I'm Vitaly Matyko</span></div>
 				<div className={homeStyles.textDeveloper}>Frontend / Backend  Developer</div>
 
+
 				<div className={homeStyles.button}>
 					<button id='send_email' onClick={getShowWindowSendMessage}>Send me Email</button>
 					<button id='cv' onClick={handleDownload}>Download cv</button>
