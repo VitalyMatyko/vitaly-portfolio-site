@@ -1,13 +1,16 @@
 import { useState, useRef, ReactNode } from "react";
-import SplashStyles from './SplashEffect.module.scss';
+import splashStyles from './SplashEffect.module.scss';
 
-interface SplashType {
+
+
+
+export interface SplashType {
 	id: number;
 	x: number;
 	y: number;
 	angle: number;
 }
-interface SplashEffectProps {
+export interface SplashEffectProps {
 	children: ReactNode;
 }
 
@@ -38,12 +41,12 @@ const SplashEffect: React.FC<SplashEffectProps> = ({ children }) => {
 				y,
 				angle,
 			});
-		}
+		};
 		setSplashes((prev) => [...prev, ...newSplashes]);
 	};
 
 	return (
-		<div className={SplashStyles['splash_wrapper']} onClick={createSplash} ref={elementRef}>
+		<div className={splashStyles['splash_wrapper']} onClick={createSplash} ref={elementRef}>
 			{children}
 			{splashes.map(({ id, x, y, angle }) => {
 				const offsetX = 120 * Math.cos(angle);
@@ -52,15 +55,13 @@ const SplashEffect: React.FC<SplashEffectProps> = ({ children }) => {
 				return (
 					<span
 						key={id}
-						className={SplashStyles.splash}
+						className={splashStyles.splash}
 						style={{
 							left: `${x}px`,
 							top: `${y}px`,
 							'--x': `${offsetX}px`,
 							'--y': `${offsetY}px`
-						} as React.CSSProperties}
-					/>
-				);
+						} as React.CSSProperties} />);
 			})}
 		</div>
 	);

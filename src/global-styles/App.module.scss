@@ -1,27 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
-	--text-color: #cdcdcd;
 	--body-background-color: linear-gradient(to bottom, #202631, #4a5568);
-	--text-link-color: green;
-	--border-color: green;
-	--profi-text-color: green;
-	--button-background-color: green;
-	--text-color-active: green;
-	--triangle-backgroundColor: #3b4454;
-	--form-text-color: #939393;
-	--tooltip-border-color: #939393;
-	--uncorrect-border-color: red;
-	--loading-line-color: green;
+	--splash-animation-background-color: linear-gradient(to right, #06dd06, #008000);
 
-	--about-header-container-background-color: linear-gradient(to right, #00ff007d, #0080007d);
-	--about-text-container-background-color: linear-gradient(to right, #06dd0640, #00800040);
-	--about-text-container-background-color: linear-gradient(to bottom, #202631, #404d63);
-	--about-text-color: green;
-	--about-text-header-border-color: #cdcdcd;
+	--home-page-loading-line-color: green;
 
-	--box-shadow-about-page-color: 0px 0px 70px 0px #82e98236;
-	--box-shadow-animation-color: 0px 0px 70px 0px #82e98236;
+	--home-page-text-color: #cdcdcd;
+	--home-page-border-color: green;
+	--home-page-profi-text-color: green;
+	--home-page-button-background-color: green;
+	--home-page-triangle-backgroundColor: #3b4454;
+	--home-page-box-shadow: 0px 0px 70px 0px #82e98236;
+
+	--home-page-send-message-text-color: #cdcdcd;
+	--home-page-send-message-border-color: green;
+	--home-page-send-message-form-text-color: #939393;
+	--home-page-send-message-uncorrect-border-color: red;
+	--home-page-send-message-correct-border-color: green;
+	--home-page-send-message-button-background-color: green;
+
+	--home-page-tooltip-text-color: #cdcdcd;
+	--home-page-tooltip-border-color: #939393;
+	--home-page-tooltip-triangle-background-color: #3b4454;
+	--home-page-tooltip-box-shadow: 0px 4px 8px #00000033;
+
+	--home-page-navbar-text-color: #cdcdcd;
+	--home-page-navbar-border-color: green;
+	--home-page-text-link-color: green;
+
+	--about-page-main-text-color: green;
+	--about-page-describe-text-color: #cdcdcd;
+	--about-page-text-header-border-color: #cdcdcd;
+	--about-page-page-box-shadow: 0px 0px 70px 0px #82e98236;
+	--about-page-container-background-color: linear-gradient(to bottom, #202631, #404d63);
+
+	--skills-page-text-color: #cdcdcd;
+	--skills-page-header-text-color: green;
+	--skills-page-border-color: green;
+	--skills-page-box-shadow: 0px 0px 70px 0px #82e98236;
+	--skills-page-background-color: linear-gradient(to bottom, #202631, #404d63);
 }
 
 * {

@@ -5,7 +5,7 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	animation: fadeIn 2s ease-in-out;
+	animation: fadeIn 1s ease-in-out;
 
 	.main_animation {
 		width: 600px;
@@ -16,7 +16,7 @@
 		position: relative;
 
 		.text {
-			border: 2px solid var(--border-color);
+			border: 2px solid var(--home-page-border-color);
 			width: 490px;
 			height: 490px;
 			border-radius: 50%;
@@ -24,14 +24,14 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			color: var(--text-color);
+			color: var(--home-page-text-color);
 			font-size: 30px;
 			margin-top: 80px;
 			position: absolute;
 			top: -25px;
 			left: 53px;
 			z-index: 3;
-			box-shadow: var(--box-shadow-animation-color);
+			box-shadow: var(--home-page-box-shadow);
 
 			.preview_text {
 				.textName {
@@ -48,7 +48,7 @@
 				}
 
 				.textDeveloper {
-					color: var(--profi-text-color);
+					color: var(--home-page-profi-text-color);
 					font-weight: bolder;
 					font-size: 20px;
 					text-align: center;
@@ -67,8 +67,8 @@
 						background-color: transparent;
 						border-radius: 10px;
 						font-weight: 500;
-						color: var(--text-color);
-						border: 2px solid var(--border-color);
+						color: var(--home-page-text-color);
+						border: 2px solid var(--home-page-border-color);
 						transition: all 0.2s ease-in-out;
 						position: relative;
 						cursor: pointer;
@@ -81,7 +81,7 @@
 							left: 0;
 							width: 100%;
 							height: 0%;
-							background-color: var(--button-background-color);
+							background-color: var(--home-page-button-background-color);
 							transition: height 0.2s ease-in-out;
 							z-index: -1;
 						}
@@ -92,7 +92,7 @@
 						}
 						&:active {
 							transform: scale(0.9);
-							background-color: var(--triangle-backgroundColor);
+							background-color: var(--home-page-triangle-backgroundColor);
 							&::before {
 								transition: height 0.1s ease-in-out;
 								height: 0%;
@@ -112,7 +112,7 @@
 				.gitHubLogo,
 				.telegramLogo,
 				.linkedinLogo {
-					border: 2px solid var(--border-color);
+					border: 2px solid var(--home-page-border-color);
 					border-radius: 10px;
 					width: 60px;
 					height: 35px;
@@ -129,7 +129,7 @@
 						height: 20px;
 						position: relative;
 						margin: 10px;
-						color: var(--text-color);
+						color: var(--home-page-text-color);
 						transition: transform 0.2s ease-in-out;
 					}
 					&::before {
@@ -139,12 +139,12 @@
 						left: 0;
 						width: 0%;
 						height: 100%;
-						background-color: var(--button-background-color);
+						background-color: var(--home-page-button-background-color);
 						transition: width 0.2s ease-in-out;
 						z-index: -1;
 					}
 					&:hover::before {
-						fill: var(--button-background-color);
+						fill: var(--home-page-button-background-color);
 						width: 100%;
 					}
 					&:active {
@@ -158,7 +158,7 @@
 		}
 
 		.middle_animation {
-			border: 2px solid var(--border-color);
+			border: 2px solid var(--home-page-border-color);
 			border-radius: 50%;
 			width: 525px;
 			height: 525px;
@@ -169,7 +169,7 @@
 			justify-content: center;
 			z-index: 2;
 			transform: rotate(65deg);
-			box-shadow: var(--box-shadow-animation-color);
+			box-shadow: var(--home-page-box-shadow);
 
 			.middle_triangle_top {
 				position: absolute;
@@ -177,7 +177,7 @@
 				left: 207px;
 				border-left: 47px solid transparent;
 				border-right: 47px solid transparent;
-				border-bottom: 300px solid var(--border-color);
+				border-bottom: 300px solid var(--home-page-border-color);
 
 				&::after {
 					content: "";
@@ -186,7 +186,7 @@
 					left: -45px;
 					border-left: 45px solid transparent;
 					border-right: 45px solid transparent;
-					border-bottom: 290px solid var(--triangle-backgroundColor);
+					border-bottom: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -196,7 +196,7 @@
 				left: 207px;
 				border-left: 47px solid transparent;
 				border-right: 47px solid transparent;
-				border-top: 300px solid var(--border-color);
+				border-top: 300px solid var(--home-page-border-color);
 				&::after {
 					content: "";
 					position: absolute;
@@ -204,7 +204,7 @@
 					left: -45px;
 					border-left: 45px solid transparent;
 					border-right: 45px solid transparent;
-					border-top: 290px solid var(--triangle-backgroundColor);
+					border-top: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -214,7 +214,7 @@
 				top: 208px;
 				border-top: 47px solid transparent;
 				border-bottom: 47px solid transparent;
-				border-right: 300px solid var(--border-color);
+				border-right: 300px solid var(--home-page-border-color);
 				&::after {
 					content: "";
 					position: absolute;
@@ -224,7 +224,7 @@
 					height: 0;
 					border-top: 45px solid transparent;
 					border-bottom: 45px solid transparent;
-					border-right: 290px solid var(--triangle-backgroundColor);
+					border-right: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -234,7 +234,7 @@
 				right: -297px;
 				border-top: 47px solid transparent;
 				border-bottom: 47px solid transparent;
-				border-left: 300px solid var(--border-color);
+				border-left: 300px solid var(--home-page-border-color);
 				&::after {
 					content: "";
 					position: absolute;
@@ -242,7 +242,7 @@
 					right: 10px;
 					border-top: 45px solid transparent;
 					border-bottom: 45px solid transparent;
-					border-left: 290px solid var(--triangle-backgroundColor);
+					border-left: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -253,7 +253,7 @@
 				transform: rotate(-44deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -261,7 +261,7 @@
 					left: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -272,7 +272,7 @@
 				transform: rotate(45deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -280,7 +280,7 @@
 					right: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -291,7 +291,7 @@
 				transform: rotate(-135deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -299,7 +299,7 @@
 					left: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -310,7 +310,7 @@
 				transform: rotate(135deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -318,19 +318,19 @@
 					right: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 		}
 
 		.outside_animation {
-			border: 2px solid var(--border-color);
+			border: 2px solid var(--home-page-border-color);
 			border-radius: 50%;
 			width: 560px;
 			height: 560px;
 			position: absolute;
 			z-index: 1;
-			box-shadow: var(--box-shadow-animation-color);
+			box-shadow: var(--home-page-box-shadow);
 
 			.outside_triangle_top {
 				position: absolute;
@@ -338,7 +338,7 @@
 				left: 225px;
 				border-left: 47px solid transparent;
 				border-right: 47px solid transparent;
-				border-bottom: 300px solid var(--border-color);
+				border-bottom: 300px solid var(--home-page-border-color);
 				&::after {
 					content: "";
 					position: absolute;
@@ -346,7 +346,7 @@
 					left: -45px;
 					border-left: 45px solid transparent;
 					border-right: 45px solid transparent;
-					border-bottom: 290px solid var(--triangle-backgroundColor);
+					border-bottom: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -356,7 +356,7 @@
 				left: 225px;
 				border-left: 47px solid transparent;
 				border-right: 47px solid transparent;
-				border-top: 300px solid var(--border-color);
+				border-top: 300px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -364,7 +364,7 @@
 					left: -45px;
 					border-left: 45px solid transparent;
 					border-right: 45px solid transparent;
-					border-top: 290px solid var(--triangle-backgroundColor);
+					border-top: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -374,7 +374,7 @@
 				left: -297px;
 				border-bottom: 47px solid transparent;
 				border-top: 47px solid transparent;
-				border-right: 300px solid var(--border-color);
+				border-right: 300px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -382,7 +382,7 @@
 					left: 10px;
 					border-bottom: 45px solid transparent;
 					border-top: 45px solid transparent;
-					border-right: 290px solid var(--triangle-backgroundColor);
+					border-right: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -392,7 +392,7 @@
 				right: -297px;
 				border-top: 47px solid transparent;
 				border-bottom: 47px solid transparent;
-				border-left: 300px solid var(--border-color);
+				border-left: 300px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -400,7 +400,7 @@
 					right: 10px;
 					border-bottom: 45px solid transparent;
 					border-top: 45px solid transparent;
-					border-left: 290px solid var(--triangle-backgroundColor);
+					border-left: 290px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -411,7 +411,7 @@
 				transform: rotate(-44deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -419,7 +419,7 @@
 					left: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -430,7 +430,7 @@
 				transform: rotate(45deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -438,7 +438,7 @@
 					right: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -449,7 +449,7 @@
 				transform: rotate(-135deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -457,7 +457,7 @@
 					left: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 
@@ -468,7 +468,7 @@
 				transform: rotate(135deg);
 				border-left: 22px solid transparent;
 				border-right: 22px solid transparent;
-				border-bottom: 150px solid var(--border-color);
+				border-bottom: 150px solid var(--home-page-border-color);
 				&::after {
 					position: absolute;
 					content: "";
@@ -476,7 +476,7 @@
 					right: -20px;
 					border-left: 20px solid transparent;
 					border-right: 20px solid transparent;
-					border-bottom: 140px solid var(--triangle-backgroundColor);
+					border-bottom: 140px solid var(--home-page-triangle-backgroundColor);
 				}
 			}
 		}

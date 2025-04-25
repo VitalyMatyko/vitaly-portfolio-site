@@ -1,32 +1,32 @@
 .tooltip_container {
 	position: absolute;
-	background: var(--triangle-backgroundColor);
-	color: white;
+	font-size: 15px;
 	padding: 12px 16px;
 	border-radius: 8px;
-	font-size: 15px;
-	border: 1px solid var(--tooltip-border-color);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	color: var(--home-page-tooltip-text-color);
+	border: 1px solid var(--home-page-tooltip-border-color);
+	box-shadow: var(--home-page-send-message-form-text-color);
+	background: var(--home-page-tooltip-triangle-background-color);
 	animation: fadeInUp 2s ease forwards;
 	z-index: 1;
 
 	.triangle {
-		position: absolute;
-		top: 61.5px;
 		left: 96%;
+		top: 61.5px;
+		position: absolute;
 		border-top: 15px solid transparent;
 		border-bottom: 10px solid transparent;
-		border-left: 35px solid var(--tooltip-border-color);
+		border-left: 35px solid var(--home-page-tooltip-border-color);
 		transform: rotate(45deg);
 
 		&::before {
 			content: "";
-			position: absolute;
 			top: -15.2px;
 			left: -38px;
+			position: absolute;
 			border-top: 15px solid transparent;
 			border-bottom: 10px solid transparent;
-			border-left: 34px solid var(--triangle-backgroundColor);
+			border-left: 34px solid var(--home-page-tooltip-triangle-background-color);
 		}
 	}
 }

@@ -6,9 +6,21 @@
 	margin: 10px;
 	z-index: 4;
 	cursor: pointer;
+
 	&:last-child {
 		margin-right: 0;
 	}
+}
+
+.splash {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background: var(--splash-animation-background-color);
+	border-radius: 50%;
+	animation: splash-animation 0.6s linear forwards;
+	opacity: 1;
+	z-index: 5;
 }
 
 @keyframes splash-animation {
@@ -20,14 +32,4 @@
 		transform: translate(var(--x), var(--y));
 		opacity: 0;
 	}
-}
-.splash {
-	position: absolute;
-	width: 8px;
-	height: 8px;
-	background: var(--splash-color);
-	border-radius: 50%;
-	animation: splash-animation 0.6s linear forwards;
-	opacity: 1;
-	z-index: 5;
 }

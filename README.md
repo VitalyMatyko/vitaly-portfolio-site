@@ -41,6 +41,6 @@
 
 ## 🔗 Project: [VitaliyPro Hub (демо Render)](https://vitaly-pro-hub-client.onrender.com/vitaly-pro-hub)
 
-## 🔗 Source code: [GitHub](https://github.com/VitalyMatyko/vitaly-portfolio-site)
+## 🔗 Source code: [VitalyPro Hub](https://github.com/VitalyMatyko/vitaly-portfolio-site)
 
-## 🚀 My GitHub: [GitHub](https://github.com/VitalyMatyko)
+## 🚀 My GitHub: [Vitaly Matyko](https://github.com/VitalyMatyko)

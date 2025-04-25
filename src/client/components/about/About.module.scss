@@ -1,19 +1,19 @@
 .about_page_container {
-	color: var(--text-color);
+	color: var(--about-page-describe-text-color);
 	width: 1180px;
 	height: 1160px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	animation: fadeIn 2s ease-in-out;
+	animation: fadeIn 1s ease-in-out;
 
 	.about_page {
 		margin: 5px;
 		width: 80%;
 		height: 90%;
 		margin: 0 auto;
-		box-shadow: var(--box-shadow-about-page-color);
+		box-shadow: var(--about-page-page-box-shadow);
 		opacity: 0.7;
 		position: relative;
 		border-radius: 20px;
@@ -34,7 +34,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background: var(--about-text-container-background-color);
+			background: var(--about-page-container-background-color);
 
 			.about_page_text_sentence {
 				.name_sentence {
@@ -42,7 +42,7 @@
 					font-weight: 700;
 					font-style: italic;
 					padding: 35px 0;
-					color: var(--about-text-color);
+					color: var(--about-page-main-text-color);
 				}
 			}
 			.sentence {
@@ -53,7 +53,7 @@
 				font-weight: 600;
 				font-style: italic;
 				margin-right: 10px;
-				color: var(--about-text-color);
+				color: var(--about-page-main-text-color);
 			}
 		}
 

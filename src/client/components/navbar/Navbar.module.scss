@@ -2,7 +2,7 @@
 	.top_panel {
 		width: 100%;
 		height: 100px;
-		color: var(--text-color);
+		color: var(--home-page-navbar-text-color);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -19,19 +19,19 @@
 			justify-content: space-between;
 
 			& a {
-				color: var(--text-color);
+				color: var(--home-page-navbar-text-color);
 				text-decoration: none;
 				transition: all 0.2s ease-in-out;
 				&:hover {
-					color: var(--text-link-color);
+					color: var(--home-page-text-link-color);
 				}
 				&:active {
 					transform: scale(0.7);
 				}
 			}
 			.active {
-				color: var(--text-link-color);
-				border-bottom: 2px solid var(--border-color);
+				color: var(--home-page-text-link-color);
+				border-bottom: 2px solid var(--home-page-navbar-border-color);
 				font-style: italic;
 			}
 		}
